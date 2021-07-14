@@ -17,9 +17,9 @@ resource "aws_instance" "web-1" {
 }
 
 
-LOOKUP Function
+LOOKUP Function & Condition ? true : false
 #resource "aws_instance" "web-1" {
-#    count = 3
+#    count = "${var.env == "prod" ? 3 : 1 }"
 #   ami = "${lookup(var.amis,var.region)}"
 #   instance_type = "t2.micro"
 #   key_name = "awswebservice"
